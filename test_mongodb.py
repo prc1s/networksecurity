@@ -4,15 +4,15 @@ from urllib.parse import quote_plus
 
 load_dotenv()
 
-raw_mangodb_username =os.getenv("MANGO_DB_USERNAME")
-raw_mangodb_password = os.getenv("MANGO_DB_PASSWORD")
+raw_mongodb_username =os.getenv("MONGO_DB_USERNAME")
+raw_mongodb_password = os.getenv("MONGO_DB_PASSWORD")
 
-mangodb_username =quote_plus(raw_mangodb_username)
-mangodb_password = quote_plus(raw_mangodb_password)
+mongodb_username =quote_plus(raw_mongodb_username)
+mongodb_password = quote_plus(raw_mongodb_password)
 
 from pymongo.mongo_client import MongoClient
 
-uri = f"mongodb+srv://{mangodb_username}:{mangodb_password}@cluster0.yfmjcsk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = f"mongodb+srv://{mongodb_username}:{mongodb_password}@cluster0.yfmjcsk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # Create a new client and connect to the server
 client = MongoClient(uri)
