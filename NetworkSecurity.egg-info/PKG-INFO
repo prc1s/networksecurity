@@ -6,8 +6,9 @@ Author-email: mohammed.bander@outlook.com
 Requires-Dist: python-dotenv
 Requires-Dist: pandas
 Requires-Dist: numpy
-Requires-Dist: pymongo
+Requires-Dist: pymongo>=4.6
 Requires-Dist: certifi
+Requires-Dist: dnspython
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist
