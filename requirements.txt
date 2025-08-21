@@ -4,4 +4,6 @@ numpy
 pymongo>=4.6
 certifi
 dnspython
+scikit-learn
+
 -e .
