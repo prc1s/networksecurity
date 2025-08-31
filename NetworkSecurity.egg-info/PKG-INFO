@@ -10,6 +10,9 @@ Requires-Dist: pymongo>=4.6
 Requires-Dist: certifi
 Requires-Dist: dnspython
 Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: dill
+Requires-Dist: pyaml
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist
