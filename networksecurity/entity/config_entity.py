@@ -69,4 +69,11 @@ class DataValidationConfig:
             self.data_validation_dir, training_pipeline.DATA_VALIDATION_DRIFT_REPORT_DIR, training_pipeline.DATA_VALIDATION_DRIFT_REPORT_FILE_NAME
         )
 
+class DataTransformationConfig():
+    def __init__(self, training_pipeline_config:TrainingPipelineConfig):
+        self.data_transformation_dir = os.path.join(training_pipeline_config.artifact_dir, training_pipeline.DATA_TRANSFORMATION_DIR_NAME)
+        self.transformed
+
+
+
         

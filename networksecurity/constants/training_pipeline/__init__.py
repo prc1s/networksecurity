@@ -29,3 +29,14 @@ DATA_VALIDATION_INVALID_DIR : str = "invalid"
 DATA_VALIDATION_DRIFT_REPORT_DIR : str = "drift_report"
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME : str = "report.yaml"
 
+#Data Transformaion Constants
+DATA_TRANSFORMATION_DIR_NAME: str = "data_transformation"
+TRANSFORMED_DATA_DIR: str = "transformed"
+TRANSFORMED_OBJECT_DIR: str = "transformed_object"
+
+#KNN Imputer To Teplace Nan values
+DATA_TRANSFORMATION_IMPUTER_PARAMS: dict = {
+    "missing_values" : np.nan,
+    "n_neighbors" : 3,
+    "weights" : "uniforme"
+}
