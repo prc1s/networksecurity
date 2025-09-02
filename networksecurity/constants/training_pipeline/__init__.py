@@ -11,6 +11,7 @@ FILE_NAME : str = "phisingData.csv"
 
 TRAIN_FILE_NAME : str = "train.csv"
 TEST_FILE_NAME : str = "test.csv"
+PREPROCESSING_OBJECT_FILE_NAME : str = "preprocessing.pkl"
 
 SCHEMA_FILE_PATH = os.path.join("data_schema", "schema.yaml")
 
@@ -38,5 +39,5 @@ TRANSFORMED_OBJECT_DIR: str = "transformed_object"
 DATA_TRANSFORMATION_IMPUTER_PARAMS: dict = {
     "missing_values" : np.nan,
     "n_neighbors" : 3,
-    "weights" : "uniforme"
+    "weights" : "uniform"
 }
