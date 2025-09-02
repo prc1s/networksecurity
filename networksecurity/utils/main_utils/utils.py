@@ -43,6 +43,21 @@ def save_numpy_array_data(file_path:str, array:np.array):
         logger.exception(NetworkSecurityException(e,sys))
         raise NetworkSecurityException(e,sys)
     
+def load_numpy_array_data(file_path:str):
+    try:
+        logger.info("load_numpy_array_data Function in main_utils initiated")
+        if not os.path.exists(file_path):
+            logger.exception(f"The file path {file_path} does not exist")
+            raise Exception(f"The file path {file_path} does not exist")
+        with open(file_path, "rb") as file:
+            print(file)
+            return np.load(file_path)
+        logger.info("Exited load_numpy_array_data Function in main_utils")
+    except Exception as e:
+        logger.exception(NetworkSecurityException(e,sys))
+        raise NetworkSecurityException(e,sys)
+
+    
 def save_pickle_object(file_path:str, obj:object):
     try:
         logger.info("save_pickle_object Function in main_utils initiated")
@@ -51,6 +66,20 @@ def save_pickle_object(file_path:str, obj:object):
         with open(file_path, "wb") as file:
             pickle.dump(obj, file)
         logger.info("Exited save_pickle_object Function in main_utils")
+    except Exception as e:
+        logger.exception(NetworkSecurityException(e,sys))
+        raise NetworkSecurityException(e,sys)
+
+def load_pickle_object(file_path:str):
+    try:
+        logger.info("load_pickle_object Function in main_utils initiated")
+        if not os.path.exists(file_path):
+            logger.exception(f"The file path {file_path} does not exist")
+            raise Exception(f"The file path {file_path} does not exist")
+        with open(file_path, "rb") as file:
+            print(file)
+            return pickle.load(file)
+        logger.info("Exited load_pickle_object Function in main_utils")
     except Exception as e:
         logger.exception(NetworkSecurityException(e,sys))
         raise NetworkSecurityException(e,sys)

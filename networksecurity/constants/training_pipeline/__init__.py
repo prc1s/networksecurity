@@ -15,6 +15,9 @@ PREPROCESSING_OBJECT_FILE_NAME : str = "preprocessing.pkl"
 
 SCHEMA_FILE_PATH = os.path.join("data_schema", "schema.yaml")
 
+SAVED_ESTIMATORS_DIR = os.path.join("saved_estimators")
+ESTIMATOR_FILE_NAME = os.path.join("model.pkl")
+
 #Data Ingestion Constants
 DATA_INGESTION_COLLECTION_NAME : str = "NetworkData"
 DATA_INGESTION_DATABASE_NAME : str = "NETWORKSECURITYAI"
@@ -38,6 +41,13 @@ TRANSFORMED_OBJECT_DIR: str = "transformed_object"
 #KNN Imputer To Teplace Nan values
 DATA_TRANSFORMATION_IMPUTER_PARAMS: dict = {
     "missing_values" : np.nan,
-    "n_neighbors" : 3,
+    "n_neighbors" : 8,
     "weights" : "uniform"
 }
+
+#Model Training constants
+MODEL_TRAINER_DIR: str = "model_training"
+TRAINED_MODEL_DIR: str = "trained_model"
+TRAINED_MODEL_FILE_NAME: str = "model.pkl"
+MODEL_TRAINER_EXPECTED_ACCURACY: float = 0.6
+MODEL_TRAINER_OVER_FITTING_UNDER_FITTING_THRESHOLD: float = 0.05
