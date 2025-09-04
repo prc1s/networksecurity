@@ -2,8 +2,6 @@ import os,sys
 from networksecurity.constants.training_pipeline import SAVED_ESTIMATORS_DIR, ESTIMATOR_FILE_NAME
 from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logging.logger import logger
-from sklearn.metrics import f1_score,precision_score,recall_score
-
 class NetworkModel():
     def __init__(self, preprocessor, model):
         try:

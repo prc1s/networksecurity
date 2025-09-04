@@ -5,6 +5,8 @@ import os,sys
 import pickle 
 import numpy as np
 import dill
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import r2_score
 
 
 def read_yaml_file(file_path:str) -> dict:
@@ -80,6 +82,32 @@ def load_pickle_object(file_path:str):
             print(file)
             return pickle.load(file)
         logger.info("Exited load_pickle_object Function in main_utils")
+    except Exception as e:
+        logger.exception(NetworkSecurityException(e,sys))
+        raise NetworkSecurityException(e,sys)
+
+def evaluate_models(x_trian,y_train,x_test,y_test,models,params):
+    try:
+        report = {}
+
+        for i in range (len(list(models))):
+            model = list(models.values())[i]
+            para = params[list(models.keys())[i]]
+
+            gs = GridSearchCV(model,para,cv=3)
+            gs.fit(x_trian,y_train)
+
+            model.set_params(**gs.best_params_)
+            model.fit(x_trian,y_train)
+
+            y_train_pred = model.predict(x_trian)
+            y_test_pred = model.predict(x_test)
+
+            train_model_score = r2_score(y_train,y_train_pred)
+            test_model_score = r2_score(y_test,y_test_pred)
+
+            report[list(models.keys())[i]] = test_model_score
+        return report
     except Exception as e:
         logger.exception(NetworkSecurityException(e,sys))
         raise NetworkSecurityException(e,sys)
