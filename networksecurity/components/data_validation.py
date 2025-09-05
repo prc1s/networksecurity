@@ -67,6 +67,7 @@ class DataValidation:
         
     def initiate_data_validation(self):
         try:
+            logger.info("Initiating Data Validation")
             train_file_path = self.data_ingestion_artifact.train_file_path
             test_file_path = self.data_ingestion_artifact.test_file_path
 
@@ -98,7 +99,7 @@ class DataValidation:
                 invalid_test_file_path=None,
                 drift_report_file_path=self.data_validation_config.valid_train_file_path
             )
-
+            logger.info("Data Validation Completed")
             return data_validation_artifact
             
         except Exception as e:

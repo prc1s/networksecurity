@@ -2,14 +2,18 @@ from networksecurity.components.data_ingestion import DataIngestion
 from networksecurity.components.data_validation import DataValidation
 from networksecurity.components.data_transformation import DataTransformation
 from networksecurity.components.model_trainer import ModelTrainer
+from networksecurity.pipeline.training_pipeline import TrainingPipeline
 from networksecurity.logging.logger import logger
 from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.entity.config_entity import DataIngestionConfig,TrainingPipelineConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
 import sys
 
+
 if __name__ == '__main__':
     try:
-        training_pipeline_config = TrainingPipelineConfig()
+        pipeline = TrainingPipeline()
+        pipeline.run_pipeline()
+        """training_pipeline_config = TrainingPipelineConfig()
         data_ingestion_config = DataIngestionConfig(training_pipeline_config)
         logger.info("Initiating Data Ingestion")
         data_ingestion = DataIngestion(data_ingestion_config)
@@ -26,7 +30,7 @@ if __name__ == '__main__':
         
         model_trainer_config = ModelTrainerConfig(training_pipeline_config)
         model_trainer = ModelTrainer(model_trainer_config, data_transformation_artifact)
-        model_trainer_artifact = model_trainer.initiate_model_trainer()
+        model_trainer_artifact = model_trainer.initiate_model_trainer()"""
 
 
 

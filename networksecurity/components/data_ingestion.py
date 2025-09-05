@@ -84,12 +84,13 @@ class DataIngestion:
     
     def initiate_data_ingestion(self):
         try:
-
+            logger.info("Initiating Data Ingestion")
             dataframe = self.export_collection_as_dataframe()
             dataframe = self.export_data_into_feature_store(dataframe)
             self.train_test_split(dataframe)
             dataingestionartifact = DataIngestionArtifact(train_file_path=self.data_ingestion_config.training_path_file,
                                                           test_file_path=self.data_ingestion_config.testing_path_file)
+            logger.info("Data Ingestion Completed")
             return dataingestionartifact
         except Exception as e:
             logger.exception(NetworkSecurityException(e,sys))
