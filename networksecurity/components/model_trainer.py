@@ -164,6 +164,7 @@ class ModelTrainer():
     def initiate_model_trainer(self):
         try:
             logger.info("Initiated Model Trainer")
+            
             train_file_path = self.data_transformation_Artifact.transformed_train_file_path
             test_file_path = self.data_transformation_Artifact.transformed_test_file_path
 

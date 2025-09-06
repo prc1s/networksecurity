@@ -55,6 +55,14 @@ class TrainingPipeline():
             logger.exception(NetworkSecurityException(e,sys))
             raise NetworkSecurityException(e,sys)
         
+    def sync_artifact_dir_to_s3(self):
+        try:
+            aws_bucket_url = 
+            self.s3_sync.sync_folder_to_s3
+        except Exception as e:
+            logger.exception(NetworkSecurityException(e,sys))
+            raise NetworkSecurityException(e,sys)
+        
     def run_pipeline(self):
         try:
             logger.info("<<<<<<<<<<<<<<<<<<Training Pipeline Started>>")
