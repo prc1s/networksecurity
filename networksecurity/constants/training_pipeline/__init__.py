@@ -3,12 +3,14 @@ import sys
 import numpy as np
 import pandas as pd
 
+#Cloud Constants
+TRAINING_BUCKET_NAME: str = "networksecurityproject12"
+
 #Constants for model training
 TARGET_COLUMN = "Result"
 PIPELINE_NAME : str = "NetworkSecurity"
 ARTIFACT_DIR : str = "Artifacts"
 FILE_NAME : str = "phisingData.csv"
-
 TRAIN_FILE_NAME : str = "train.csv"
 TEST_FILE_NAME : str = "test.csv"
 PREPROCESSING_OBJECT_FILE_NAME : str = "preprocessing.pkl"
