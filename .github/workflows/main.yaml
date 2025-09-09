@@ -25,6 +25,7 @@ jobs:
     name: Continuous Delivery
     needs: integration
     runs-on: ubuntu-latest
+    environment: Action Secrets
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
