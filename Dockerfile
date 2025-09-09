@@ -1,10 +1,10 @@
-FROM python:3.10-slim-buster
+FROM python:3.10-slim-bookworm
 WORKDIR /app
-
-COPY requirements.txt /app/
-RUN pip install --no-cache-dir awscli \
- && pip install --no-cache-dir -r requirements.txt
-
 COPY . /app
 
+RUN apt update \
+ && apt install -y --no-install-recommends awscli \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir -r requirements.txt
 CMD ["python3", "app.py"]
