@@ -12,4 +12,5 @@ mlflow
 fastapi
 uvicorn
 python-multipart
+awscli
 -e .

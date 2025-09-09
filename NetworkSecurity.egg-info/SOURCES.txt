@@ -7,6 +7,7 @@ NetworkSecurity.egg-info/requires.txt
 NetworkSecurity.egg-info/top_level.txt
 networksecurity/__init__.py
 networksecurity/cloud/__init__.py
+networksecurity/cloud/s3_syncer.py
 networksecurity/components/__init__.py
 networksecurity/components/data_ingestion.py
 networksecurity/components/data_transformation.py
