@@ -81,7 +81,7 @@ jobs:
 
       - name: stop and remove container if running
         run:  |
-          docker ps -q --filter "name=networksecurity" | grep -q . && docker stop networksecurity && docker rm -fv networksecurity
+          docker rm -fv networksecurity >/dev/null 2>&1 || true
 
       - name: Run Docker Image To Serve Users
         run:  |
