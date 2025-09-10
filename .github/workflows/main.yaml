@@ -79,9 +79,9 @@ jobs:
         run: |
           docker pull ${{secrets.AWS_ECR_URI}}/${{secrets.ECR_REPOSITORY_NAME}}:latest
 
-      - name: stop and remove container if running
-        run:  |
-          docker rm -fv networksecurity >/dev/null 2>&1 || true
+      # - name: stop and remove container if running
+      #   run:  |
+      #     docker rm -fv networksecurity >/dev/null 2>&1 || true
 
       - name: Run Docker Image To Serve Users
         run:  |
@@ -90,4 +90,3 @@ jobs:
       - name: Clean previous images and containers
         run:  |
           docker system prune -f
-          
